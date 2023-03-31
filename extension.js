@@ -6,7 +6,6 @@ const NodeCrypto = require('crypto')
 const { dirname, basename } = require('path')
 const fs  = require('fs');
 const Path = require('path')
-const { config } = require('process');
 
 
 function encryptConfig(configContext, hexCipherRSA)  {
@@ -51,7 +50,7 @@ function encrypt() {
     }
 
     const fileName = configuration.keysFilePath
-	const hexcipherRSA = fs.readFileSync(fileName, 
+	const hexcipherRSA = fs.readFileSync(fileName,
 		{encoding:'utf8', flag:'r'})
     if (hexcipherRSA === null) {
 		vscode.window.showErrorMessage(`File "${fileName}" is not exist`)
