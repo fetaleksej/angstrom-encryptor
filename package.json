@@ -2,7 +2,7 @@
   "name": "angstrom-encryptor",
   "displayName": "Angstrom Config Encryptor",
   "description": "The encrypter for angtrom configs",
-  "version": "0.0.1",
+  "version": "1.1.0",
   "engines": {
     "vscode": "^1.76.0"
   },
@@ -12,22 +12,28 @@
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "angstrom-config-encryptor.encrypt",
-      "title": "Hello World"
-    }],
+    "commands": [
+      {
+        "command": "angstrom-config-encryptor.encrypt",
+        "title": "Ang: Encrypt"
+      },
+      {
+        "command": "angstrom-config-encryptor.encryptOldVersion",
+        "title": "Ang: Encrypt (old version)"
+      }
+    ],
     "configuration": {
       "title": "Angstrom encrypter",
       "properties": {
         "angstrom-config-encryptor.keysFilePath": {
           "type": "string",
           "default": "",
-          "description": "A full path and name a file contained keys"
+          "description": "Full path and name of public key file"
         }, 
-        "angstrom-config-encryptor.configFileName": {
+        "angstrom-config-encryptor.outputFolderPath": {
           "type": "string",
-          "default": "config.json",
-          "description": "Insert only file name of config file"
+          "default": "./presets/",
+          "description": "Path to the output folder where encrypted \".prst\" files will be stored"
         }
       }
     },
